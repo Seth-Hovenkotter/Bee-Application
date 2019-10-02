@@ -1,0 +1,274 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:id="@+id/linBackground">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:id="@+id/backgroundTop">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:id="@+id/AudioLayout">
+
+                <TextView
+                    android:id="@+id/Record_Title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Audio Recorder"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="25dp"
+                    android:background="#6e8ffcff" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <com.beeapp.VisualizerView
+                        android:id="@+id/myvisualizerview"
+                        android:layout_width="fill_parent"
+
+                        android:layout_height="77dp"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/visualizerborder"
+                        android:scaleType="fitCenter"
+                        />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="77dp"
+                        android:layout_margin="10dp"
+                        android:max="4000"
+                        android:progressDrawable="@drawable/progressbar"
+                        android:scaleType="fitCenter" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txtTimer"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Press Record To Start"
+                    android:textAlignment="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold"
+                    android:textSize="25dp" />
+
+                <Button
+                    android:id="@+id/playButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="playAudio"
+                    android:background="@drawable/buttonborder"
+                    android:text="Play"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/recordButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="recordAudio"
+                    android:background="@drawable/buttonborder"
+                    android:text="Record"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+            android:id="@+id/AlgoLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/border"
+            android:orientation="vertical">
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Algo_Title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Analyze Recording"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="25dp"
+                    android:background="#6e8ffcff" />
+
+                <TextView
+                    android:id="@+id/Results"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="No Ann.Audio Has Been Recorded"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Check"
+                    android:id="@+id/algoBtn"
+                    android:onClick="runAlgo"
+                    android:background="@drawable/buttonborder"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/GPSLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/GPS_Title"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="GPS Location"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:gravity="center"
+                        android:background="#6e8ffcff" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtLat"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Latitude: None"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_marginTop="20dp" />
+
+                <TextView
+                    android:id="@+id/txtLong"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|bottom"
+                    android:text="Longitude: None"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_marginBottom="20dp" />
+
+                <Button
+                    android:id="@+id/gpsButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="getLocation"
+                    android:text="Get Location"
+                    android:background="@drawable/buttonborder"
+                    android:textStyle="bold"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/NoteLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/border"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/Notes_Title"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Notes"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold"
+                        android:textSize="25dp"
+                        android:background="#6e8ffcff"
+                        android:gravity="center" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/Notebox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:editable="true"
+                    android:enabled="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:inputType="textMultiLine"
+                    android:minHeight="100dp"
+                    android:minLines="4" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSaveAll"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="saving"
+                android:text="Save"
+                android:background="@drawable/buttonborder"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
